@@ -59,6 +59,9 @@
   bottom: 2px;
   right: 3px;
   z-index: 1;
+  [dir="rtl"] & {
+    left: 3px;
+  }
 }
 
 .feedback-button-wrapper {
