@@ -3,6 +3,7 @@ import Box from "./Box";
 
 interface IButtonAsLabelProps {
   light?: boolean;
+  rtl?: boolean;
 }
 
 // a button styled thing which is actually just a label?
@@ -10,7 +11,8 @@ const ButtonAsLabel = styled(Box).attrs({
   centered: true,
   styledMinHeight: "32px"
 })<IButtonAsLabelProps>`
-  border-radius: 0 16px 16px 0;
+  border-radius: ${({ rtl }) =>
+    (!rtl && "0 16px 16px 0;") || (rtl && "16px 0 0 16px;")};
   ${props =>
     props.light &&
     `

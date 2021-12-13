@@ -13,6 +13,7 @@ import withControlledVisibility from "../HOCs/withControlledVisibility";
 const MapDataCount = observer(function(props) {
   const { t } = useTranslation();
   const { terria, viewState } = props;
+  const isRTL = viewState.isRTL;
   if (viewState.useSmallScreenInterface) {
     return null;
   }
@@ -33,7 +34,7 @@ const MapDataCount = observer(function(props) {
     // components as they stand come with their own "wrapper" via scss
     // <Box styledMinHeight="72px">
     <Box position="absolute" css={"bottom: 40px;"}>
-      <ButtonAsLabel light={hasMapData}>
+      <ButtonAsLabel light={hasMapData} rtl={isRTL}>
         <Spacing right={1} />
         <StyledIcon
           glyph={
