@@ -13,7 +13,7 @@ import BaseOuterPanel from "./BaseOuterPanel";
 import Styles from "./panel.scss";
 
 import defined from "terriajs-cesium/Source/Core/defined";
-
+import i18next from "i18next";
 const DropdownPanel = createReactClass({
   displayName: "DropdownPanel",
   mixins: [BaseOuterPanel],
@@ -28,6 +28,7 @@ const DropdownPanel = createReactClass({
 
   onInnerMounted(innerElement) {
     const centerInnerDropdown = this.props.showDropdownInCenter;
+    const isRTL = i18next.dir() === 'rtl';
     if (centerInnerDropdown) {
       this.setState({
         caretOffset: "50%",
@@ -53,10 +54,17 @@ const DropdownPanel = createReactClass({
         0
       );
 
-      this.setState({
-        caretOffset: caretOffset >= 0 && caretOffset + "px",
-        dropdownOffset: dropdownOffset + "px"
-      });
+      if (!isRTL) {
+        this.setState({
+          caretOffset: caretOffset >= 0 && caretOffset + "px",
+          dropdownOffset: dropdownOffset + "px"
+        });
+      } else if (isRTL) {
+        this.setState({
+          caretOffset: caretOffset >= 0 && caretOffset + "px",
+          dropdownOffset: "auto"
+        });
+      }
     } else {
       this.setState({
         caretOffset: undefined,

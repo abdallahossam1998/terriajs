@@ -67,7 +67,10 @@
   z-index: 10;
   top: $padding-small;
   right: $padding-small;
-
+  [dir="rtl"] & {
+    left: $padding-small;
+    right: unset;
+  }
   // &:hover,
   // &:focus {
   //   svg {

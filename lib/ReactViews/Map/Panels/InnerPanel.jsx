@@ -8,6 +8,7 @@ import { withTranslation } from "react-i18next";
 
 import Styles from "./panel.scss";
 import Icon from "../../../Styled/Icon";
+import i18next from "i18next";
 
 const InnerPanel = createReactClass({
   propTypes: {
@@ -95,6 +96,7 @@ const InnerPanel = createReactClass({
 
   render() {
     const { t } = this.props;
+    const isRTL =  i18next.dir() === 'rtl';
     return (
       <div
         className={classNames(
@@ -111,7 +113,8 @@ const InnerPanel = createReactClass({
         `}
         ref={this.props.innerRef}
         onClick={e => e.stopPropagation()}
-        style={{
+        style={!isRTL &&
+          {
           width: this.props.modalWidth,
           left: this.props.dropdownOffset,
           // the modal should be right-aligned with the button
@@ -119,7 +122,19 @@ const InnerPanel = createReactClass({
           transformOrigin: this.props.showDropdownInCenter
             ? "0 top"
             : this.props.caretOffset && `${this.props.caretOffset} top`
-        }}
+          }
+          ||
+          isRTL && 
+          {
+            width: this.props.modalWidth,
+            right: this.props.dropdownOffset,
+            // the modal should be right-aligned with the button
+            left: "0px",
+            transformOrigin: this.props.showDropdownInCenter
+              ? "0 top"
+              : this.props.caretOffset && `${this.props.caretOffset} top`
+          }
+        }
       >
         <button
           type="button"
@@ -163,7 +178,7 @@ const InnerPanel = createReactClass({
         >
           <span
             className={classNames(Styles.caret, "tjs-sc-InnerPanel__caret")}
-            style={{ left: this.props.caretOffset }}
+            style={!isRTL && {left: this.props.caretOffset } || isRTL && {right: this.props.caretOffset }}
             css={`
               background: ${p => p.theme.dark};
             `}
