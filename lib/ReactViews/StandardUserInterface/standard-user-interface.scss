@@ -170,9 +170,16 @@
 .showWorkbenchButtonisVisible {
   left: 16px;
   transform: translateX(0);
+  [dir="rtl"] & {
+    right: 16px;
+    left: unset;
+  }
 }
 .showWorkbenchButtonisNotVisible {
   transition-delay: 0s;
+  [dir="rtl"] & {
+    transform: translateX(200px);
+  }
 }
 
 @media (min-width: $sm) {
