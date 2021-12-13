@@ -4,6 +4,7 @@ import styled, { useTheme } from "styled-components";
 import Box from "../../Styled/Box";
 import { RawButton } from "../../Styled/Button";
 import { TextSpan } from "../../Styled/Text";
+import i18next from "i18next";
 
 // only spans are valid html for buttons (even though divs work)
 const ButtonWrapper = styled(Box).attrs({
@@ -121,6 +122,7 @@ function MapIconButton(props: IMapIconButtonProps) {
   const expanded = !noExpand && (isExpanded || neverCollapse) && children;
   const buttonRef = props.buttonRef || useRef();
   const theme = useTheme();
+  const isRTL = i18next.dir() == "rtl";
 
   // const handleAway = () => setTimeout(() => setExpanded(false), 1000);
   const handleAway = () => setExpanded(false);
@@ -137,8 +139,8 @@ function MapIconButton(props: IMapIconButtonProps) {
       primary={primary}
       splitter={splitter}
       inverted={inverted}
-      roundLeft={roundLeft}
-      roundRight={roundRight}
+      roundLeft={isRTL ? roundRight: roundLeft}
+      roundRight={isRTL ? roundLeft : roundRight }
       disabled={disabled}
       type="button"
       title={title}
@@ -221,7 +223,7 @@ function MapIconButton(props: IMapIconButtonProps) {
             `
               position:absolute;
               top:0;
-              right:0;
+              ${isRTL ? `left: 0;` : `right: 0;`}
               ${isExpanded && `z-index:10;`}
             `
           }
