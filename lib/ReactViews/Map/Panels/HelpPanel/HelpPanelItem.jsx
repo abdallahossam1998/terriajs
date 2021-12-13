@@ -31,14 +31,14 @@ class HelpPanelItem extends React.Component {
   render() {
     const itemSelected =
       this.props.viewState.selectedHelpMenuItem === this.props.content.itemName;
-
+    const isRTL = this.props.viewState.isRTL
     // `content.icon` is user defined and can possibly force the UI to lookup a
     // nonexistant icon.
     const title = useTranslationIfExists(this.props.content.title);
     const paneMode = this.props.content.paneMode;
     const opensInPanel = paneMode !== "externalLink";
     const iconGlyph = opensInPanel
-      ? Icon.GLYPHS.right
+      ? isRTL ?Icon.GLYPHS.left: Icon.GLYPHS.right
       : Icon.GLYPHS.externalLink;
     return (
       <div>
@@ -117,6 +117,11 @@ const MenuItemText = styled(Text).attrs({
   padding-right: 25px;
   padding-left: 5px;
   text-align: left;
+  [dir="rtl"] & {
+  padding-right:  5px;
+  padding-left: 25px;
+  text-align: right;
+  }
 `;
 
 export default withTranslation()(withTheme(HelpPanelItem));
