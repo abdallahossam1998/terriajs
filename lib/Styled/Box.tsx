@@ -81,6 +81,10 @@ export const Box = styled.div<IBoxProps>`
     `
     right: 0px;
     top: 0px;
+    [dir="rtl"] & {
+    left: 0px;
+    right:unset;
+  }
   `}
 
   ${props => props.displayInlineBlock && `display: inline-block;`}

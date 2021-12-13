@@ -46,6 +46,7 @@ class HelpPanel extends React.Component {
     const helpItems = this.props.terria.configParameters.helpContent;
     const isExpanded = this.props.viewState.helpPanelExpanded;
     const isAnimatingOpen = this.state.isAnimatingOpen;
+    const isRTL = this.props.viewState.isRTL
     return (
       <Box
         displayInlineBlock
@@ -58,9 +59,13 @@ class HelpPanel extends React.Component {
           z-index: ${this.props.viewState.topElement === "HelpPanel"
             ? 99999
             : 110};
-          transition: right 0.25s;
+          transition: ${isRTL ? "left" : "right"} 0.25s;
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-          right: ${isAnimatingOpen ? -320 : isExpanded ? 490 : 0}px;
+          ${isRTL ? "left:" : "right:"} ${isAnimatingOpen
+            ? -320
+            : isExpanded
+            ? 490
+            : 0}px;
         `}
       >
         <Box position="absolute" paddedRatio={3} topRight>
@@ -79,7 +84,7 @@ class HelpPanel extends React.Component {
           paddedVertically={17}
           displayInlineBlock
           css={`
-            direction: ltr;
+            direction:${isRTL ? 'rtl' : 'ltr'};
             min-width: 295px;
             padding-bottom: 0px;
           `}
