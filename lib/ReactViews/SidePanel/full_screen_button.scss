@@ -14,6 +14,10 @@
   // work bench width
   left: 350px;
   top: $map-button-top;
+  [dir="rtl"] & {
+    right: 350px;
+    left: unset;
+  }
 }
 .trainerBarVisible {
   top: $map-button-top + $trainer-height;
@@ -32,6 +36,9 @@
     // New arrow design (w/o styled-component fixes)
     margin: auto;
     width: 12px;
+    [dir="rtl"] & {
+      transform: rotate(180deg);
+    }
   }
 }
 
@@ -43,6 +50,11 @@
     padding: 0;
     padding-right: $padding-small;
     box-shadow: none;
+    [dir="rtl"] & {
+      border-radius: $map-button-border-radius 0 0 $map-button-border-radius;
+      padding-right: unset;
+      padding-left: $padding-small;
+    }
   }
   svg:not(:root) {
     margin: auto $padding-small;
