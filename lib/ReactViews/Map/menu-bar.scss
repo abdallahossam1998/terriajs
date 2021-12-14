@@ -55,7 +55,11 @@
   align-items: center;
 
   margin-right: $padding-tiny;
-
+  [dir="rtl"] & {
+    float: right;
+    margin-right: unset;
+    margin-left: $padding-tiny;
+  }
   &:last-child {
     margin-right: 0;
   }
@@ -68,12 +72,18 @@
   &:first-child > button,
   &:first-child > a {
     border-radius: $map-button-border-radius 0 0 $map-button-border-radius;
+    [dir="rtl"] & {
+      border-radius: 0  $map-button-border-radius  $map-button-border-radius 0;
+    }
   }
   &:last-child > div > button,
   &:last-child > div > a,
   &:last-child > button,
   &:last-child > a {
     border-radius: 0 $map-button-border-radius $map-button-border-radius 0;
+    [dir="rtl"] & {
+      border-radius: $map-button-border-radius 0 0 $map-button-border-radius;
+    }
   }
   &:only-child > div > button,
   &:only-child > div > a,
@@ -81,6 +91,10 @@
   &:only-child > a {
     border-radius: $map-button-border-radius $map-button-border-radius
       $map-button-border-radius $map-button-border-radius;
+    [dir="rtl"] & {
+    border-radius: $map-button-border-radius $map-button-border-radius
+    $map-button-border-radius $map-button-border-radius;
+    }  
   }
 }
 
