@@ -68,7 +68,7 @@ class HelpPanel extends React.Component {
             : 0}px;
         `}
       >
-        <Box position="absolute" paddedRatio={3} topRight>
+        <Box position="absolute" paddedRatio={3} topRight topLeft={isRTL} >
           <RawButton onClick={() => this.props.viewState.hideHelpPanel()}>
             <StyledIcon
               styledWidth={"16px"}

@@ -20,6 +20,7 @@ interface Column {
 interface IBoxPropsBase {
   position?: "relative" | "absolute" | "static";
   topRight?: boolean;
+  topLeft?: boolean;
   displayInlineBlock?: boolean;
   rounded?: boolean;
   fullHeight?: boolean;
@@ -77,16 +78,17 @@ export const Box = styled.div<IBoxProps>`
   ${props => !props.position && `position: relative;`}
 
   ${props =>
-    props.topRight &&
+    props.topRight && 
     `
     right: 0px;
-    top: 0px;
-    [dir="rtl"] & {
-    left: 0px;
-    right:unset;
-  }
+    top: 0px;  
   `}
-
+ ${props =>
+    props.topLeft && 
+    `
+    left: 0px;
+    right: unset;  
+  `}
   ${props => props.displayInlineBlock && `display: inline-block;`}
 
   ${props => props.rounded && `border-radius: ${props.theme.radiusLarge};`}
