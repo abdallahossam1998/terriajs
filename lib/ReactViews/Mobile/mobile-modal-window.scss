@@ -47,6 +47,9 @@
 
   float: right;
   padding: $padding;
+  [dir="rtl"] & {
+    float: left;
+  }
 }
 
 .back-button {
@@ -56,7 +59,9 @@
   height: 40px;
   width: 40px;
   padding: 5px;
-
+  [dir="rtl"] & {
+    float: right;
+  }
   &--inactive {
     opacity: 0.5;
 
@@ -73,6 +78,9 @@
   margin: 6px;
   fill: #ffffff;
   stroke: #ffffff;
+  [dir="rtl"] & {
+    transform: rotate(180deg);
+  }
 }
 
 .data-catalog {

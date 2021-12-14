@@ -147,6 +147,7 @@ const MobileHeader = observer(
         this.props.terria.workbench.items !== undefined
           ? this.props.terria.workbench.items.length
           : 0;
+      const isRTL = this.props.viewState.isRTL    
 
       return (
         <div className={Styles.ui}>
@@ -167,7 +168,7 @@ const MobileHeader = observer(
                 <Box
                   position="absolute"
                   css={`
-                    left: 5px;
+                    ${isRTL ? 'right: 5': 'left: 5'}px;
                   `}
                 >
                   <HamburgerButton
