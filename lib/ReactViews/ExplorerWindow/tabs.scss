@@ -9,11 +9,18 @@
   padding-right: 100px;
   // background: $color-primary;
   border-radius: 3px 3px 0 0;
+  [dir="rtl"] & {
+    padding-left: 100px;
+    padding-right: unset;
+  }
 }
 
 .tab-list__item {
   display: inline-block;
   float: left;
+  [dir="rtl"] & {
+    float: right;
+  }
 }
 
 .tab-panel {
@@ -48,6 +55,9 @@
     form {
       margin: $padding 0;
     }
+    [dir="rtl"] & {
+      float: right;
+    }
   }
 }
 
@@ -58,6 +68,9 @@
       width: 40%;
       float: left;
       height: 100%;
+    }
+    [dir="rtl"] & {
+      float: right;
     }
   }
 }

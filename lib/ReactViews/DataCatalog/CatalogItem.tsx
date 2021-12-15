@@ -105,7 +105,9 @@ const ItemTitleButton = styled(RawButton)<{
   overflow-wrap: anywhere;
   padding: 8px;
   width: 100%;
-
+  [dir="rtl"] & {
+    text-align: right;
+  }
   &:focus,
   &:hover {
     color: ${p => p.theme.modalHighlight};

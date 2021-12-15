@@ -39,7 +39,9 @@
   font-weight: bold;
   line-height: normal;
   position: relative;
-
+  [dir="rtl"] & {
+    text-align: right;
+  }
   svg {
     display: inline-block;
   }
@@ -61,6 +63,10 @@
   font-weight: 600;
   border-bottom: 1px solid $grey-lighter;
   padding-left: $padding;
+  [dir="rtl"] & {
+    padding-left: unset;
+    padding-right: $padding;
+  }
 }
 
 .isPreviewed {
@@ -77,6 +83,10 @@
     height: 30px;
     width: 30px;
     display: block;
+  }
+  [dir="rtl"] & {
+    right: 8px;
+    left: unset;
   }
   @media (min-width: $sm) {
     top: 5px;
@@ -96,9 +106,16 @@
   svg {
     fill: $charcoal-grey;
   }
+  [dir="rtl"] & {
+    left: 8px;
+    right: unset;
+  }
   @media (min-width: $sm) {
     right: 5px;
     top: 8px;
+    [dir="rtl"] & {
+      left: 5px;
+    }
     svg {
       height: 10px;
       width: 10px;
@@ -106,6 +123,10 @@
   }
   &.offsetRight {
     right: 25px;
+    [dir="rtl"] & {
+      left: 25px;
+      right: unset;
+    }
   }
 }
 
@@ -113,9 +134,19 @@
   composes: list-reset from "../../Sass/common/_base.scss";
   padding-left: $padding;
   padding-top: $padding / 2;
+  [dir="rtl"] & {
+    padding-left: unset;
+    padding-right: $padding;
+  }
   &--lower-level {
     margin-left: 20px;
     border-left: 1px solid $grey-lighter;
+    [dir="rtl"] & {
+      margin-left: unset;
+      margin-right: 20px;
+      border-left: unset;
+      border-right: 1px solid $grey-lighter;
+    }
   }
 }
 

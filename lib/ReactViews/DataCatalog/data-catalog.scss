@@ -20,6 +20,10 @@
     padding-right: $padding-small;
     height: 100%; // replace with this once the search bar is back: calc(100% - #{$input-height + $padding * 3});
     position: static;
+    [dir="rtl"] & {
+      padding-right: unset;
+      padding-left: $padding-small;
+    }
   }
 }
 

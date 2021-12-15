@@ -12,6 +12,9 @@
 }
 .tab-panel {
   text-align: left;
+  [dir="rtl"] & {
+    text-align: right;
+  }
 }
 
 .label {
@@ -44,6 +47,9 @@
     width: calc(100% - 50px);
     float: left;
     font-family: $font-base;
+    [dir="rtl"] & {
+      float: right;
+    }
   }
 
   &__btn {
@@ -53,6 +59,9 @@
 
     width: 50px;
     float: left;
+    [dir="rtl"] & {
+      float: right;
+    }
   }
 }
 

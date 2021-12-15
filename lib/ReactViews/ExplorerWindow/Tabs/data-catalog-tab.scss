@@ -26,11 +26,19 @@
     margin-top: $padding;
     height: calc(100% - #{$input-height});
   }
+  [dir="rtl"] & {
+    padding-left: $padding;
+    padding-right: unset;
+  }
 }
 
 .data--catalog-group {
   composes: list-reset from "../../../Sass/common/_base.scss";
   padding-left: $padding-small;
+  [dir="rtl"] & {
+    padding-right: $padding-small;
+    padding-left: unset;
+  }
 }
 
 .label {
