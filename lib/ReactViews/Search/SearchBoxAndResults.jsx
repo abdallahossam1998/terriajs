@@ -21,6 +21,7 @@ import { addMarker } from "../../Models/LocationMarkerUtils";
 
 export function SearchInDataCatalog({ viewState, handleClick }) {
   const locationSearchText = viewState.searchState.locationSearchText;
+  const isRTL = viewState.isRTL
   return (
     <RawButton
       fullWidth
@@ -45,7 +46,7 @@ export function SearchInDataCatalog({ viewState, handleClick }) {
             Search <strong>{locationSearchText}</strong> in the Data Catalogue
           </Trans>
         </Text>
-        <StyledIcon glyph={Icon.GLYPHS.right2} styledWidth={"14px"} light />
+        <StyledIcon glyph={isRTL ? Icon.GLYPHS.left : Icon.GLYPHS.right2} styledWidth={"14px"} light />
       </Box>
     </RawButton>
   );

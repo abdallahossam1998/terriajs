@@ -7,6 +7,7 @@ import styled, { withTheme } from "styled-components";
 import Box, { BoxSpan } from "../../Styled/Box";
 import Text from "../../Styled/Text";
 import { RawButton } from "../../Styled/Button";
+import i18next from "i18next"
 
 const SearchInput = styled.input`
   box-sizing: border-box;
@@ -121,8 +122,9 @@ export const SearchBox = createReactClass({
   },
 
   render() {
+    const isRTL = i18next.dir() === 'rtl'
     const clearButton = (
-      <Box position="absolute" topRight fullHeight styledWidth={"40px"}>
+      <Box position="absolute" topRight topLeft={isRTL} fullHeight styledWidth={"40px"}>
         {/* The type="button" here stops the browser from assuming the close button is the submit button */}
         <RawButton
           type="button"

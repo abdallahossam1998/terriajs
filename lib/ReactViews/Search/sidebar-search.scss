@@ -29,13 +29,18 @@
   width: 100%;
   text-align: left;
   color: $text-light;
-
+  [dir="rtl"] & {
+    text-align: right;
+  }
   svg {
     height: 20px;
     width: 20px;
     position: absolute;
     right: $padding-small;
     top: $padding-small;
+    [dir="rtl"] & {
+      left: $padding-small;
+    }
   }
 }
 

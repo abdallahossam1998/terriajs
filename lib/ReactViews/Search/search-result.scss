@@ -43,6 +43,9 @@
   height: 21px;
   width: 17px;
   margin: 7px 0;
+  [dir="rtl"] & {
+    right: -3px;
+  }
 }
 
 .resultName {
@@ -75,6 +78,10 @@
     padding-right: $padding;
     width: 100%;
     border: 1px solid transparent;
+    [dir="rtl"] & {
+      padding-left: $padding;
+      padding-right: 0px;
+    }
   }
   &:hover {
     background-color: $grey-lighter;
