@@ -13,6 +13,8 @@
   // margin-left: $work-bench-width + 40px;
   margin-left: 50px;
   [dir="rtl"] & {
+    right: 0;
+    left: $padding;
     margin-right: 50px;
     margin-left: unset;
   }
