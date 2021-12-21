@@ -13,12 +13,16 @@ export interface TourPoint {
   priority: number;
   caretOffsetTop?: number;
   caretOffsetLeft?: number;
+  caretOffsetRight?: number;
   indicatorOffsetTop?: number;
   indicatorOffsetLeft?: number;
+  indicatorOffsetRight?: number;
   offsetTop?: number;
   offsetLeft?: number;
+  offsetRight?: number;
   positionTop?: RelativePosition;
   positionLeft?: RelativePosition;
+  positionRight?: RelativePosition;
   content: string;
 }
 
@@ -28,18 +32,21 @@ export const defaultTourPoints = [
     appRefName: "LocationSearchInput",
     priority: 30,
     offsetLeft: 225,
+    offsetRight: 115,
     content: "translate#tour.locationSearchInput.content"
   },
   {
     appRefName: "ExploreMapDataButton",
     priority: 10,
     offsetLeft: 70,
+    offsetRight: 70,
     content: "translate#tour.exploreMapDataButton.content"
   },
   {
     appRefName: "SidePanelUploadButton",
     priority: 20,
     offsetLeft: 70,
+    offsetRight: -140,
     content: "translate#tour.sidePanelUploadButton.content"
   },
   {
@@ -48,6 +55,9 @@ export const defaultTourPoints = [
     caretOffsetLeft: TOUR_WIDTH - 25,
     offsetLeft: -TOUR_WIDTH - 30,
     positionLeft: RelativePosition.RECT_RIGHT,
+    caretOffsetRight: TOUR_WIDTH - 25,
+    offsetRight: -TOUR_WIDTH - 705,
+    positionRight: RelativePosition.RECT_LEFT,
     content: "translate#tour.menuBarMapSettingsButton.content"
   },
   {
@@ -56,6 +66,9 @@ export const defaultTourPoints = [
     caretOffsetLeft: TOUR_WIDTH - 25,
     offsetLeft: -TOUR_WIDTH - 10,
     positionLeft: RelativePosition.RECT_RIGHT,
+    caretOffsetRight: TOUR_WIDTH - 25,
+    offsetRight: -TOUR_WIDTH - 1005,
+    positionRight: RelativePosition.RECT_LEFT,
     content: "translate#tour.menuBarStoryButton.content"
   },
   {
@@ -63,12 +76,16 @@ export const defaultTourPoints = [
     priority: 60,
     caretOffsetTop: 18,
     caretOffsetLeft: TOUR_WIDTH - 18,
-    indicatorOffsetTop: 15,
+    caretOffsetRight: TOUR_WIDTH - 18,
+    indicatorOffsetTop: 4,
     indicatorOffsetLeft: 25,
+    indicatorOffsetRight: 25,
     offsetTop: 0,
     offsetLeft: -TOUR_WIDTH - 15,
+    offsetRight: -TOUR_WIDTH - 1095,
     positionTop: RelativePosition.RECT_TOP,
     positionLeft: RelativePosition.RECT_LEFT,
+    positionRight: RelativePosition.RECT_RIGHT,
     content: "translate#tour.mapNavigationCompassOuterRing.content"
   },
   {
@@ -76,12 +93,16 @@ export const defaultTourPoints = [
     priority: 70,
     caretOffsetTop: 20,
     caretOffsetLeft: TOUR_WIDTH - 18,
+    caretOffsetRight: TOUR_WIDTH - 18,
     indicatorOffsetTop: 3,
     indicatorOffsetLeft: 17,
+    indicatorOffsetRight: 17,
     offsetTop: -15,
     offsetLeft: -TOUR_WIDTH - 15,
+    offsetRight: -TOUR_WIDTH - 15,
     positionTop: RelativePosition.RECT_TOP,
     positionLeft: RelativePosition.RECT_LEFT,
+    positionRight: RelativePosition.RECT_RIGHT,
     content: "translate#tour.mapNavigationSplitterIcon.content"
   }
 ];
