@@ -32,6 +32,9 @@
   margin: 0;
   width: 480px;
   padding: $padding * 4;
+  [dir="rtl"] & {
+    text-align: right;
+  }
   @media (max-width: $sm), (max-height: 299px) {
     width: 100%;
     transform: none;
@@ -71,6 +74,10 @@
     padding: 10px 25px;
 
     margin-right: 5px;
+    [dir="rtl"] & {
+      margin-right: unset;
+      margin-left: 5px;
+    }
   }
 }
 .WelcomeModal-buttonPrimary {
@@ -111,7 +118,10 @@
 
   top: 15px;
   right: 15px;
-
+  [dir="rtl"] & {
+    right: unset;
+    left: 15px;
+  }
   &:hover,
   &:focus {
     svg {
