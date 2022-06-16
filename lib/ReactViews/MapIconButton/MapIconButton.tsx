@@ -153,6 +153,9 @@ function MapIconButton(props: IMapIconButtonProps) {
       css={`
         svg {
           margin: 0px 6px;
+          [dir="rtl"] & {
+            transform: rotateY(180deg) !important;
+          }
         }
       `}
     >
