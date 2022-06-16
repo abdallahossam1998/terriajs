@@ -463,7 +463,6 @@ const ViewingControls = observer(
             css={`
               list-style: none;
               padding-left: 0;
-              ${isRtl && { paddingRight: 0 }};
               margin: 0;
               width: 100%;
               position: relative;
@@ -528,7 +527,10 @@ const ViewingControls = observer(
               css={`
                 position: absolute;
                 z-index: 100;
-                right: 165px;
+                right: 0px;
+                [dir="rtl"] & {
+                  right: 165px;
+                }
                 top: 0;
                 top: 32px;
                 top: 42px;
