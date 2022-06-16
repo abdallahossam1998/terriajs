@@ -24,6 +24,11 @@ const BottomLeftContainer = styled(Box)`
       transform: rotate(180deg) !important;
     }
   }
+  svg {
+    [dir="rtl"] & {
+      transform: rotate(180deg) !important;
+    }
+  }
   [dir="rtl"] & {
     left: unset;
     right: 0px;
