@@ -454,9 +454,8 @@ const ViewingControls = observer(
     render() {
       const viewState = this.props.viewState;
       const item = this.props.item;
-      const { i18n, t } = this.props;
+      const { t } = this.props;
       const showMenu = item.uniqueId === viewState.workbenchWithOpenControls;
-      const isRtl = i18n.dir() === "rtl";
       return (
         <Box>
           <ul
